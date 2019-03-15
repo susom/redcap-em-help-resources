@@ -1,29 +1,72 @@
 <?php
 namespace Stanford\HelpResources;
 
+include_once "emLoggerTrait.php";
+
+use \Plugin;
 
 class HelpResources extends \ExternalModules\AbstractExternalModule {
-	  function __construct() {
+
+    use emLoggerTrait;
+
+    function __construct() {
 		parent::__construct();
-         // System::init();
-         //$lang['home_62']="testtttt";
-		// Other code to run when object is instantiated
 	}
-    function redcap_every_page_top($project_id)
+
+
+
+	function redcap_every_page_top($project_id)
     {
-        if (isset($_GET['action']) && $_GET['action'] == 'training') {
-           $resources_page= $this->getUrl("index.html");
-            ?>
-            <script>
-                $(document).ready(function() {
-                    var resources_pag="<?php echo  $resources_page; ?>";
-                    $('#nav-tab-training a').html("<i class='fas fa-map-signs'></i> Resources & Training"); //redcap variable  $lang['home_62']
-                    $('#pagecontent').prepend("<div id='em-info' ></div>");
-                    $('#em-info').load(resources_pag);
-                });
-            </script>
-            <?php
+        // Only updates on index page
+        if (substr(PAGE,0,9) == "index.php" || PAGE == "ControlCenter/index.php") {
+            $this->updateNavHeader();
+        }
+
+
+        // If we are on our custom help_resources, take over page
+        if (PAGE == "index.php?action=help_resources") {
+            $this->emDebug("ON HELP_RESOURCES");
+            include $this->getModulePath() . "/help_resources.php";
         }
     }
 
+
+    function updateNavHeader() {
+        // Hide the normal help*faq and trainingvideos nav links
+        $this->emDebug("Hiding Nav Bar Items!");
+        ?>
+            <style type="text/css">
+                #pagecontent > nav.navbar { opacity:0; }
+                #nav-tab-help, #nav-tab-training, #nav-tab-training2 { display:none !important; width:0 !important; }
+            </style>
+        <?php
+
+        // Add our new button
+        ?>
+            <script>
+                $(document).ready(function() {
+                    var e = $('#nav-tab-help')
+                        .clone()
+                        .attr('id','nav-tab-help-resources');
+
+                    e.find('a')
+                        .empty()
+                        .css({"color": "#800000"})
+                        .attr("href","?action=help_resources")
+                        .append("<i class='fas fa-spin fa-map-signs'></i>")
+                        .append("<span class='font-weight-bold'> Resources & Training</span>");
+
+                    e.insertBefore('#nav-tab-help');
+
+                    // Make our button spin for 2 seconds
+                    $('#pagecontent>nav.navbar').animate({"opacity":"1"}, 500, function() {
+                        setTimeout(function() {
+                            $('i.fa-spin.fa-map-signs').removeClass('fa-spin');
+                        }, 1500);
+                    }); //.fadeIn(100); // { display:none; }
+
+                });
+            </script>
+        <?php
+    }
 }

@@ -9,7 +9,7 @@
 
 	"authors": [
 		{
-			"name": "draft",
+			"name": "Alvaro Alvarez",
 			"email": "alvaro1@stanford.edu",
 			"institution": "Stanford University"
 		}
@@ -18,34 +18,39 @@
 	"permissions": [
 		"redcap_every_page_top",
 		"redcap_every_page_before_render"
-
 	],
 	
 	"enable-every-page-hooks-on-system-pages": true,	
 
 	"links": {
 		"project": [
-
 		],
 		"control-center": [
-
 		]
 	},
 
 	"no-auth-pages": [
-
 	],
 
 	"project-settings": [
-
+		{
+			"key": "enable-project-debug-logging",
+			"name": "<b>Enable Debug Logging</b><i>(Requires emLogger)</i>",
+			"required": false,
+			"type": "checkbox"
+	    }
 	],
 
 	"system-settings": [
-
+		{
+			"key": "enable-system-debug-logging",
+			"name": "<b>Enable Debug Logging (system-wide)</b><i>(Requires emLogger)</i>",
+			"required": false,
+			"type": "checkbox"
+	    }
 	],
 
 	"crons": [
-
 	],
 
 	"compatibility": {
