@@ -50,7 +50,8 @@
 
     <div style="padding-top:8px;font-size: 18px;border-bottom:1px solid #aaa;padding-bottom:2px;">
         <span class="fas fa-map-signs" aria-hidden="true"></span>
-        Training and Resources</div>
+        Training and Resources
+    </div>
 
     <div class="container mb-5 mt-5">
         <div class="row">
@@ -81,17 +82,17 @@
             </div>
             <div class="col-sm-4 d-flex align-items-stretch">
                 <div class="card re-card">
-                    <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Email Support</span>
+                    <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Training Videos</span>
                     <div class="card-body">
-
-                        <p class="card-text">We are happy to answer specific questions by emailing redcap-help@lists.stanford.edu. or by filling a consultation request.</p>
+                        <p class="card-text">Explore these overviews of fundamental concepts and features.</p>
                         <br><br>
                         <div class="rc-button">
-                            <a href="https://redcap.stanford.edu/plugins/gethelp/" target="_BLANK" class=""><button type="button" class="btn btn-success mb-3 pl-5 pr-5">Go</button></a>
+                            <a href="https://redcap.stanford.edu/index.php?action=training" target="_BLANK" class=""><button type="button" class="btn btn-success mb-3 pl-5 pr-5">Go</button></a>
                         </div>
                     </div>
                 </div>
             </div>
+
 
         </div>
         <br>
@@ -101,7 +102,6 @@
                 <div class="card re-card">
                     <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Office Hours</span>
                     <div class="card-body">
-
                         <p class="card-text"> If you have a question or require some hands-on help with REDCap, we will do our best to assist. In-person or On-line.</p>
                         <br><br>
                         <div class="rc-button">
@@ -114,7 +114,6 @@
                 <div class="card re-card">
                     <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">In-Person Training</span>
                     <div class="card-body">
-
                         <p class="card-text">We offer a free 3-hour Introductory REDCap class once a month. please find here the current calendar. </p>
                         <br><br>
                         <div class="rc-button">
@@ -123,6 +122,23 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-4 d-flex align-items-stretch">
+                <div class="card re-card">
+                    <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Email Support</span>
+                    <div class="card-body">
+
+                        <p class="card-text">We are happy to answer specific questions by emailing redcap-help@lists.stanford.edu. or by filling a consultation request.</p>
+                        <br><br>
+                        <div class="rc-button">
+                            <a href="https://redcap.stanford.edu/plugins/gethelp/" target="_BLANK" class=""><button type="button" class="btn btn-success mb-3 pl-5 pr-5">Go</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!--Here is row 3-->
+        <div class="row">
             <div class="col-sm-4 d-flex align-items-stretch">
                 <div class="card re-card">
                     <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Professional Services</span>
@@ -136,6 +152,9 @@
                 </div>
             </div>
         </div>
+
+
+
     </div>
 
 
