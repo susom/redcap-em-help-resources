@@ -70,3 +70,5 @@ class HelpResources extends \ExternalModules\AbstractExternalModule {
         <?php
     }
 }
+
+//test
