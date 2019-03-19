@@ -18,7 +18,8 @@ class HelpResources extends \ExternalModules\AbstractExternalModule {
 	function redcap_every_page_top($project_id)
     {
         // Only updates on index page
-        if (substr(PAGE,0,9) == "index.php" || PAGE == "ControlCenter/index.php") {
+        $this->emDebug(PAGE);
+        if (substr(PAGE,0,9) == "index.php" || PAGE == "ControlCenter/index.php" || PAGE=="" ) {
             $this->updateNavHeader();
         }
 
