@@ -166,7 +166,7 @@
             .empty()
             .append( $('#newPageContent').html() )
             .parent()
-            .fadeIn(200);
+            .fadeIn(100);
 
     });
 </script>

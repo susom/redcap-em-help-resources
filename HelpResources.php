@@ -18,8 +18,7 @@ class HelpResources extends \ExternalModules\AbstractExternalModule {
 	function redcap_every_page_top($project_id)
     {
         // Only updates on index page
-        $this->emDebug(PAGE);
-        if (substr(PAGE,0,9) == "index.php" || PAGE == "ControlCenter/index.php" || PAGE=="" ) {
+        if (substr(PAGE,0,9) == "index.php" || PAGE == "ControlCenter/index.php" || PAGE=="" || PAGE=="SendItController:upload") {
             $this->updateNavHeader();
         }
 
@@ -53,7 +52,7 @@ class HelpResources extends \ExternalModules\AbstractExternalModule {
                     e.find('a')
                         .empty()
                         .css({"color": "#800000"})
-                        .attr("href","?action=help_resources")
+                        .attr("href","index.php?action=help_resources")
                         .append("<i class='fas fa-spin fa-map-signs'></i>")
                         .append("<span class='font-weight-bold'> Resources & Training</span>");
 
