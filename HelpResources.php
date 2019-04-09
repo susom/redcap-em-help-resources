@@ -17,8 +17,15 @@ class HelpResources extends \ExternalModules\AbstractExternalModule {
 
 	function redcap_every_page_top($project_id)
     {
+        // $this->emDebug("On " . __FUNCTION__ . " / " . PAGE);
+
         // Only updates on index page
-        if (substr(PAGE,0,9) == "index.php" || PAGE == "ControlCenter/index.php" || PAGE=="" || PAGE=="SendItController:upload") {
+        if (substr(PAGE,0,10) == "/index.php" ||    // Looks like PAGE now reports a preceeding / for index... (8.11.7)
+            substr(PAGE,0,9) == "index.php" ||
+            PAGE == "ControlCenter/index.php" ||
+            PAGE=="" ||
+            PAGE=="SendItController:upload")
+        {
             $this->updateNavHeader();
         }
 
@@ -33,7 +40,7 @@ class HelpResources extends \ExternalModules\AbstractExternalModule {
 
     function updateNavHeader() {
         // Hide the normal help*faq and trainingvideos nav links
-        $this->emDebug("Hiding Nav Bar Items!");
+        $this->emDebug("Hiding Nav Bar Items on " . PAGE);
         ?>
             <style type="text/css">
                 #pagecontent > nav.navbar { opacity:0; }
