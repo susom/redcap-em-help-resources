@@ -16,13 +16,11 @@ class HelpResources extends \ExternalModules\AbstractExternalModule {
 	function redcap_every_page_top($project_id)
     {
 
-        // Trying to deal with changes in how REDCap parses the PAGE constant...
-        $page = $_SERVER['REQUEST_URI'];    // e.g.  /index.php?action=help_resources
         // $this->emDebug("On " . __FUNCTION__, PAGE, basename(dirname(PAGE_FULL)), PAGE_FULL, $_SERVER['REQUEST_URI']);//, $_SERVER['asdf']);
 
         // Only updates on index page
-        if (substr($page,0,10) == "/index.php" ||    // Looks like PAGE now reports a preceeding / for index... (8.11.7)
-            substr($page,0,9) == "index.php" ||
+        if (substr(PAGE,0,10) == "/index.php" ||    // Looks like PAGE now reports a preceeding / for index... (8.11.7)
+            substr(PAGE,0,9) == "index.php" ||
             PAGE == "ControlCenter/index.php" ||
             PAGE == "" ||
             PAGE == "SendItController:upload")
@@ -32,6 +30,8 @@ class HelpResources extends \ExternalModules\AbstractExternalModule {
 
 
         // If we are on our custom help_resources, take over page
+        // Trying to deal with changes in how REDCap parses the PAGE constant...
+        $page = $_SERVER['REQUEST_URI'];    // e.g.  /index.php?action=help_resources
         if ($page == "index.php?action=help_resources" || $page == "/index.php?action=help_resources")
         {
             $this->emDebug("ON HELP_RESOURCES");
