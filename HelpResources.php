@@ -31,7 +31,8 @@ class HelpResources extends \ExternalModules\AbstractExternalModule {
 
 
         // If we are on our custom help_resources, take over page
-        if (PAGE == "index.php?action=help_resources") {
+        if (PAGE == "index.php?action=help_resources" || PAGE == "/index.php?action=help_resources")
+        {
             $this->emDebug("ON HELP_RESOURCES");
             include $this->getModulePath() . "/help_resources.php";
         }
