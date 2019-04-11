@@ -16,7 +16,7 @@ class HelpResources extends \ExternalModules\AbstractExternalModule {
 	function redcap_every_page_top($project_id)
     {
 
-        // $this->emDebug("On " . __FUNCTION__, PAGE, basename(dirname(PAGE_FULL)), PAGE_FULL, $_SERVER['REQUEST_URI']);//, $_SERVER['asdf']);
+        //$this->emDebug("On " . __FUNCTION__, 'PAGE:' . PAGE, 'BASE: ' . basename(dirname(PAGE_FULL)), 'PAGE FULL: ' . PAGE_FULL, 'URI: ' . $_SERVER['REQUEST_URI']);//, $_SERVER['asdf']);
 
         // Only updates on index page
         if (substr(PAGE,0,10) == "/index.php" ||    // Looks like PAGE now reports a preceeding / for index... (8.11.7)
